@@ -1,6 +1,6 @@
 require 'rails_helper'
-RSpec.describe 'show data fromm movies api', type: :system do
-  before { create(:movie) }
+RSpec.describe 'show movies from database', type: :system do
+  before { create(:movie) } # create a movie in the test database from the movies factory
 
   describe 'index page' do
     it 'shows the right content' do
