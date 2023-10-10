@@ -1,0 +1,13 @@
+<h1>Wish List</h1>
+
+<%# <%= render "form", movie: @movie %>
+  <% @movies.all.each do |movie| %>
+  <h3><%= movie.title %></h3>
+  <img src=<%= movie.poster_path %> alt=<%= movie.title %>>
+  <p><%= movie.overview %></p>
+  <% end %>
+<br>
+
+<div>
+  <%= link_to "Back to movies", movies_path %>
+</div>

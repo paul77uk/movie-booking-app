@@ -1,0 +1,22 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Movies</h1>
+
+<div id="movies">
+  <% @movies.each do |movie| %>
+    <%# <%= render movie %>
+
+   <div class='movie-img'><%= image_tag movie.poster_path %>
+    <div class="heart" id=<%= movie.poster_path %>><%= link_to movie_path(movie), data: { turbo_method: "post" } do %>
+    <i class="fa-solid fa-heart" style="color: #f20d24;"></i>
+    <% end %></div>
+   </div>
+
+
+      <%# <%= link_to "Show this movie", movie %>
+    <h5><%= movie.title %></h5>
+    <p><%= movie.overview %></p>
+  <% end %>
+</div>
+
+<%= link_to "New movie", new_movie_path %>
